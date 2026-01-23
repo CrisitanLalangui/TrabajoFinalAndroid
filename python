@@ -1,0 +1,6 @@
+siempre hay que tener en cuenta el .env, porque si se nos desconfigura el interpretador de python
+
+
+correo = cristianlg@gmail.com
+
+contraseña = casacasa1
