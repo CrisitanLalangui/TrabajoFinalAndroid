@@ -1,3 +1,70 @@
+# 🚀 Protocolo de Trabajo en Git
+
+¡Hola equipo! Para mantener nuestro código organizado y evitar desastres, seguiremos este flujo de trabajo obligatorio. Por favor, seguid estos pasos cada vez que vayáis a trabajar.
+
+---
+
+## 📂 Paso 1: Preparación del Entorno
+Antes de empezar, prepara tu espacio de trabajo local:
+
+1. Ve a tu **Escritorio** (o donde prefieras guardar tus proyectos).
+2. Crea una **carpeta nueva vacía**.
+3. Ponle un nombre claro (ej. `nombre-del-proyecto`).
+
+---
+
+## 📥 Paso 2: Clonar el Repositorio
+Ahora vamos a descargar la rama principal (**main**) a tu equipo:
+
+1. Abre la terminal dentro de la carpeta que creaste.
+2. Ejecuta el siguiente comando:
+   ```bash
+   git clone [https://github.com/USUARIO/REPOSITORIO.git](https://github.com/USUARIO/REPOSITORIO.git) .
+
+---
+
+## 🌿 Paso 3: Crear tu Propia Rama
+Para mantener el proyecto seguro, **nadie trabaja en la rama `main`**. Cada miembro debe tener su propio espacio de trabajo.
+
+1. Abre tu terminal en la carpeta del proyecto.
+2. Crea y salta a tu nueva rama usando tu nombre:
+   ```bash
+   git checkout -b tu-nombre-aqui
+
+   ---
+
+## 🔄 Paso 4: Ciclo de Actualización y Subida (Pull & Push)
+
+Este es el paso más importante para que el código de todos encaje perfectamente. **Sigue este orden estrictamente** cada vez que quieras subir tu trabajo:
+
+### 📥 1. Sincronizar (Hacer el Pull)
+Antes de subir nada, "trae" lo que tus compañeros hayan hecho para estar al día y evitar errores:
+```bash
+git pull origin main
+
+## 🤝 Paso 5: Crear un Pull Request (PR)
+
+Una vez que hayas hecho el `push` de tu rama, es hora de que tu código pase a formar parte del proyecto principal en GitHub.
+
+1. Entra en el repositorio en **GitHub.com**.
+2. Verás un botón amarillo que dice **"Compare & pull request"**. ¡Dale click!
+3. Escribe un título breve y una descripción de lo que has cambiado.
+4. Dale al botón verde **"Create pull request"**.
+
+> [!CAUTION]
+> **No le des a "Merge" tú mismo.** Espera a que un compañero o el responsable del proyecto revise tu código para darte el visto bueno. ✅
+
+
+
+
+
+
+
+
+
+
+
+
 # Proyecto Final: App Colaborativa de Apuntes y Tareas
 
 Este repositorio contiene el prototipo y la documentación técnica para la aplicación de gestión académica colaborativa.
