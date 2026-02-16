@@ -2,121 +2,89 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainApuntes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".subirApuntes">
+    android:padding="16dp"
+    tools:context=".SubirApuntes">
 
     <TextView
-        app:id="@+id/ApunteActivity"
+        android:id="@+id/ApunteActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="32dp"
         android:text="Subir Archivo"
-        android:textSize="45dp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:background="@color/BlancoHumno"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        app:layout_constraintBottom_toBottomOf="@+id/ApunteActivity"
-        app:layout_constraintBottom_toTopOf="@id/tituloApunte"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:placeholderText="Correo fddf"
-        app:boxCornerRadiusBottomEnd="25dp"
-        app:boxCornerRadiusBottomStart="25dp"
-        app:boxCornerRadiusTopEnd="25dp"
-        app:boxCornerRadiusTopStart="25dp"
-        app:boxBackgroundColor="@color/BlancoHumno"
-        android:hint="Introduzca el nombre del archivo: "
-        app:boxStrokeColor="@color/azulClaro"
-        app:boxBackgroundMode="outline"
-        app:id="@+id/textInputTituloapunte"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="15dp"
-        android:layout_width="300dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/azulClaro"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-
     <TextView
-
-        app:id="@+id/tituloApunte"
+        android:id="@+id/tituloApunte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="100dp"
-        android:text="Seleccionar"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.338"
+        android:layout_marginTop="40dp"
+        android:text="Nombre:"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ApunteActivity" />
 
+    <EditText
+        android:id="@+id/textInputLayoutnombreApunte"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="Escribe el nombre"
+        app:layout_constraintBaseline_toBaselineOf="@id/tituloApunte"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tituloApunte" />
 
     <TextView
+        android:id="@+id/subirApunte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Seleccionar archivo:"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tituloApunte" />
 
-        app:id="@+id/ueriApunte"
+    <Button
+        android:id="@+id/botonSubirApunte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="@color/azulClaro"
+        android:text="Subir"
+        android:layout_marginLeft="95dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/subirApunte" />
+
+    <TextView
+        android:id="@+id/ueriApunte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="urei"
-        android:textSize="15dp"
+        android:text="Sin archivo seleccionado"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@id/botonSubirApunte" />
 
     <Button
-        app:id="@+id/botonSubirApunte"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="100dp"
-        android:backgroundTint="@color/azulClaro"
-        android:text="Subir "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
-        app:layout_constraintStart_toStartOf="@id/tituloApunte"
-        app:layout_constraintTop_toBottomOf="@id/ApunteActivity" />
-
-    <Button
         android:id="@+id/botonGuardarApuntes"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/azulOscuro"
-        android:padding="10dp"
+        android:padding="12dp"
         android:text="Guardar"
-        android:textSize="25dp"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/botonSubirApunte" />
-
-    <ImageButton
-
-
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="28dp"
-
-        android:src="@drawable/castillo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_constraintTop_toBottomOf="@id/botonGuardarApuntes" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

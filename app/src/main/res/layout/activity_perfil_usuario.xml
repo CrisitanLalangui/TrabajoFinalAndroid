@@ -306,8 +306,8 @@
                     android:layout_width="25dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
-                    android:src="@drawable/list"
-                    app:tint="@color/black" />
+                    android:src="@drawable/home"
+                    app:tint="@color/azulClaro" />
 
                 <TextView
 
@@ -341,8 +341,8 @@
                     android:layout_width="25dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
-                    android:src="@drawable/list"
-                    app:tint="@color/black" />
+                    android:src="@drawable/guardar"
+                    app:tint="@color/azulClaro" />
 
                 <TextView
 
@@ -377,8 +377,8 @@
                     android:layout_width="25dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
-                    android:src="@drawable/list"
-                    app:tint="@color/black" />
+                    android:src="@drawable/file"
+                    app:tint="@color/azulClaro" />
 
                 <TextView
 
@@ -413,8 +413,8 @@
                     android:layout_width="25dp"
                     android:layout_height="45dp"
                     android:layout_marginLeft="30dp"
-                    android:src="@drawable/list"
-                    app:tint="@color/black" />
+                    android:src="@drawable/logout"
+                    app:tint="@color/azulClaro" />
 
                 <TextView
 

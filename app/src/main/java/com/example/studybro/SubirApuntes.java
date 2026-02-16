@@ -4,18 +4,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class subirApuntes extends AppCompatActivity {
+public class SubirApuntes extends AppCompatActivity {
 
     private static final int PICK_PDF_FILE = 1;
 
@@ -48,7 +44,7 @@ public class subirApuntes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(subirApuntes.this, MainActivity.class);
+                Intent intent = new Intent(SubirApuntes.this, MainActivity.class);
                 startActivity(intent);
 
 

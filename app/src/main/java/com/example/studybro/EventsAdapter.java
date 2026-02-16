@@ -4,7 +4,6 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,13 +24,19 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
 
     CardView cardView;
 
+
+
     ArrayList<EventModel> centros;
 
     public EventsAdapter(Context context, ArrayList<EventModel> events) {
         this.context = context;
         centros = events;
 
+
     }
+
+
+
 
     @NonNull
     @Override
@@ -55,6 +60,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
             public void onClick(View v) {
 
 
+                Intent intent = new Intent(context, SubirApuntes.class);
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+
             }
         });
 
@@ -71,6 +81,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
         TextView nombreCentro, tipoAccesibilidad, location, tvTipoInsituto;
         CardView card;
 
+
+
+
         public SostenDeVistas(@NonNull View itemView) {
 
             super(itemView);
@@ -82,7 +95,11 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
 
 
         }
+
+
     }
+
+
 }
 
 
