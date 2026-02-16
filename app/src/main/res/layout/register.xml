@@ -59,6 +59,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/outline_attach_email_24"
+            android:inputType="textEmailAddress"
+            android:hint="mail"
 
 
 
@@ -88,9 +91,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-
-
+            android:hint="contraseña"
+            android:inputType="textPassword"
             android:textColor="@color/azulClaro" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,9 +148,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-
-
+            android:hint="repita contraseña"
+            android:inputType="textPassword"
             android:textColor="@color/azulClaro" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,8 +177,10 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-            android:textColor="@color/azulClaro" />
+            android:drawableEnd="@drawable/outline_add_location_alt_24"
+            android:textColor="@color/azulClaro"
+            android:hint="direccion"
+            android:inputType="textPostalAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -204,9 +207,9 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-
-
+            android:drawableEnd="@drawable/outline_call_24"
+            android:hint="telefono"
+            android:inputType="phone"
             android:textColor="@color/azulClaro" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -242,16 +245,16 @@
         android:id="@+id/HipervinculoRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Iniciar Sesión"
         android:textColor="@color/azulClaro"
         android:textSize="15dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/Registerlgv2"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/Registerlgv1"
-        app:layout_constraintTop_toBottomOf="@id/preguntaREgister"
 
-        />
+        app:layout_constraintTop_toBottomOf="@id/preguntaREgister" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
