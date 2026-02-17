@@ -4,7 +4,60 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-public class FormUtils {
+public class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FormUtils {
 
 
 
