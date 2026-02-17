@@ -26,7 +26,6 @@ public class SubirApuntes extends AppCompatActivity {
 
         ueri = findViewById(R.id.ueriApunte);
 
-
         Uri pickerInitialUri = Uri.parse(
                 "content://com.android.externalstorage.documents/document/primary:Download"
         );
@@ -36,7 +35,6 @@ public class SubirApuntes extends AppCompatActivity {
         Button botonSubirApunte = findViewById(R.id.botonSubirApunte);
         botonSubirApunte.setOnClickListener(v -> {
             openFile(pickerInitialUri);
-
 
         });
 
