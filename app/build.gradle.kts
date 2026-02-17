@@ -36,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.airbnb.android:lottie:6.3.0")//animaciones para el splash
     implementation("com.github.bumptech.glide:glide:4.16.0") //importamos el glid
     implementation("com.squareup.retrofit2:retrofit:3.0.0")//Dependencia de retrofit
