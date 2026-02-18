@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
@@ -39,7 +47,7 @@ public class Login extends AppCompatActivity {
 
         Button loginButton = findViewById(R.id.loginButton);
         TextView loginTvRegister = findViewById(R.id.HipervinculoRegistrarse);
-        TextInputLayout username = findViewById(R.id.TextoInputUsr);
+        TextInputLayout email = findViewById(R.id.TextoInputUsr);
         TextInputLayout password = findViewById(R.id.ContrasenaLogin);
 
 
@@ -49,9 +57,9 @@ public class Login extends AppCompatActivity {
 
                 boolean canContinue = true;
 
-                if (FormUtils.isTilEmpty(username)){
-                    username.setErrorEnabled(true);
-                    username.setError("Necesitas  acceder con un nombre de usuario");
+                if (FormUtils.isTilEmpty(email)){
+                    email.setErrorEnabled(true);
+                    email.setError("Necesitas  acceder con un nombre de usuario");
                     canContinue = false;
                 }
                 if (FormUtils.isTilEmpty(password)){
@@ -61,14 +69,46 @@ public class Login extends AppCompatActivity {
 
                 } else if (!FormUtils.checkPassword(FormUtils.getTilText(password),hashedPassword)) {
                     password.setErrorEnabled(true);
-                    username.setError("La contraseña es incorrecta");
+                    email.setError("La contraseña es incorrecta");
                     canContinue = false;
                 }
 
                 if (canContinue) {
 
-                    Intent intentMain = new Intent(Login.this, MainActivity.class);
-                    startActivity(intentMain);
+                    UsuarioLogin usuarioLogin = new UsuarioLogin(FormUtils.getTilText(email), FormUtils.getTilText(password));
+                    ApiInterfaz api = ApiCliente.getClient2().create(ApiInterfaz.class);
+                    Call<ResponseBody> call = api.iniciarSesion(usuarioLogin);
+
+                    call.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                            if (response.isSuccessful()) {
+                                Toast.makeText(Login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
+                                Intent intentMain = new Intent(Login.this, MainActivity.class);
+                                startActivity(intentMain);
+                            } else {
+
+                                try {
+                                    String error = response.errorBody().string();
+                                    error = error.replace("{\"success\":false,\"errors\":[\"", "");
+                                    error = error.replace("\"}", "");
+                                    Toast.makeText(Login.this, error, Toast.LENGTH_SHORT).show();
+
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            Toast.makeText(Login.this, "No se ha podido iniciar sesión", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
                 }
             }
         });

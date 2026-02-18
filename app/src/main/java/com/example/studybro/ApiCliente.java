@@ -9,13 +9,16 @@
     public class ApiCliente {
 
 
-        public static String BASE_URL = "https://datos.madrid.es/";
+        public static String BASE_URL_CENTROS = "https://datos.madrid.es/";
+        public static String BASE_URL_EMULADOR = "https://pelletlike-primely-shalanda.ngrok-free.dev/"; //Esto es un enlace web, que permite acceder
+                                                                                                        // desde cualquier dispositivo a django
 
 
-        public static Retrofit retrofit;
+        public static Retrofit retrofitCentros;
+        public static Retrofit retrofitEmulador;
 
         public static Retrofit getClient() {
-            if (retrofit == null) {
+            if (retrofitCentros == null) {
                 // Configuración del interceptor para ver los logs de las peticiones
                 HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
                 interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -26,13 +29,34 @@
                         .build();
 
                 // Configuración de Retrofit
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(BASE_URL)
+                retrofitCentros = new Retrofit.Builder()
+                        .baseUrl(BASE_URL_CENTROS)
                         .addConverterFactory(GsonConverterFactory.create()) // Se agrega el conversor (usualmente Gson)
                         .client(client)
                         .build();
             }
-            return retrofit;
+            return retrofitCentros;
+        }
+
+        public static Retrofit getClient2() {
+            if (retrofitEmulador == null) {
+                // Configuración del interceptor para ver los logs de las peticiones
+                HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+                interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+                // Configuración del cliente OkHttp
+                OkHttpClient client = new OkHttpClient.Builder()
+                        .addInterceptor(interceptor)
+                        .build();
+
+                // Configuración de Retrofit
+                retrofitEmulador = new Retrofit.Builder()
+                        .baseUrl(BASE_URL_EMULADOR)
+                        .addConverterFactory(GsonConverterFactory.create()) // Se agrega el conversor (usualmente Gson)
+                        .client(client)
+                        .build();
+            }
+            return retrofitEmulador;
         }
     }
 

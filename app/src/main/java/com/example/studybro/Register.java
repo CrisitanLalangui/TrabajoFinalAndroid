@@ -17,6 +17,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.IOException;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Register extends AppCompatActivity {
 
     @Override
@@ -85,8 +92,51 @@ public class Register extends AppCompatActivity {
                     String hashedPassword = FormUtils.generateHashedPassword(password);
                     editor.putString("password", hashedPassword);
                     editor.apply();
-                    Intent intentMain = new Intent(Register.this, Login.class);
-                    startActivity(intentMain);
+
+
+
+                    /// Registrar Usuario///
+
+                    UsuarioRegistro usuarioRegistro = new UsuarioRegistro(correoElectronico, contraseña, confirmarContraseña);
+                    ApiInterfaz api = ApiCliente.getClient2().create(ApiInterfaz.class);
+                    //El response Body es para enviar una respuesta al servidor
+                    Call<ResponseBody> call = api.registrarUsuario(usuarioRegistro);
+
+                    call.enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+
+                            if (response.isSuccessful()) {
+                                Toast.makeText(Register.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+
+                                Intent intentMain = new Intent(Register.this, Login.class);
+                                startActivity(intentMain);
+                            } else {
+
+
+                                try {
+                                    String error = response.errorBody().string();
+                                    error = error.replace("{\"success\":false,\"errors\":[\"", "");
+                                    error = error.replace("\"}", "");
+                                    Toast.makeText(Register.this, error, Toast.LENGTH_SHORT).show();
+
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                            Toast.makeText(Register.this, "Ha habido un error  en el registro", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+
+
                 }
 
             }

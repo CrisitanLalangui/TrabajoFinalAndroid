@@ -5,25 +5,20 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
-import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -214,47 +209,47 @@ public class MainActivity extends AppCompatActivity {
                         Centros centrosListado = response.body();
                         if (centrosListado.centrosMadrid == null) return;
 
-                        // Limpiamos de forma segura
+
                         ArrayList<EventModel> temp = new ArrayList<>();
                         int limite = Math.min(50, centrosListado.centrosMadrid.size());
 
                         for (int i = 0; i < limite; i++) {
-                            Centros.CentroMadrid c = centrosListado.centrosMadrid.get(i);
+                            Centros.CentroMadrid center = centrosListado.centrosMadrid.get(i);
 
-                            String nom = c.nombreCentro != null ? c.nombreCentro : "Sin nombre";
-                            String calle = (c.address != null && c.address.streetName != null) ? c.address.streetName : "S/N";
+                            String nombreCentro = center.nombreCentro != null ? center.nombreCentro : "Sin nombre";
+                            String calle = (center.address != null && center.address.streetName != null) ? center.address.streetName : "S/N";
 
 
-                            String org = "N/A", desc = "N/A";
+                            String organizacion = "N/A", descendencia = "N/A";
 
-                            if (c.organization != null) {
-                                org = c.organization.organizationName != null ? c.organization.organizationName : "N/A";
-                                desc = c.organization.organizationDesc != null ? c.organization.organizationDesc : "N/A";
+                            if (center.organization != null) {
+                                organizacion = center.organization.organizationName != null ? center.organization.organizationName : "N/A";
+                                descendencia = center.organization.organizationDesc != null ? center.organization.organizationDesc : "N/A";
 
-                                if (org.toLowerCase().contains("public") || org.toLowerCase().contains("públic")) {
-                                    org = "Público";
-                                } else if (org.toLowerCase().contains("municipal") || org.toLowerCase().contains("madrid")) {
-                                    org = "Público";
+                                if (organizacion.toLowerCase().contains("public") || organizacion.toLowerCase().contains("públic")) {
+                                    organizacion = "Público";
+                                } else if (organizacion.toLowerCase().contains("municipal") || organizacion.toLowerCase().contains("madrid")) {
+                                    organizacion = "Público";
                                 } else
-                                    org = "Privado";
+                                    organizacion = "Privado";
 
 
-                                if (desc.toLowerCase().contains("bachillerato")) {
-                                    desc = "Bachillerato";
-                                } else if (desc.toLowerCase().contains("primaria")) {
-                                    desc = "Primaria";
-                                } else if (desc.toLowerCase().contains("infantil")) {
-                                    desc = "infantil";
-                                } else if (desc.toLowerCase().contains("uni")) {
-                                    desc = "Universidad";
+                                if (descendencia.toLowerCase().contains("bachillerato")) {
+                                    descendencia = "Bachillerato";
+                                } else if (descendencia.toLowerCase().contains("primaria")) {
+                                    descendencia = "Primaria";
+                                } else if (descendencia.toLowerCase().contains("infantil")) {
+                                    descendencia = "infantil";
+                                } else if (descendencia.toLowerCase().contains("uni")) {
+                                    descendencia = "Universidad";
                                 } else {
-                                    desc = "insituto";
+                                    descendencia = "insituto";
 
 
                                 }
                             }
 
-                            temp.add(new EventModel(nom, calle, desc, org));
+                            temp.add(new EventModel(nombreCentro, calle, descendencia, organizacion));
                         }
 
                         // Actualizar listas y UI
