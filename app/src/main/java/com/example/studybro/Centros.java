@@ -16,6 +16,10 @@ public class Centros {
         @SerializedName("address")
         public Address address;
 
+        @SerializedName("id")
+        public String id;
+
+
         @SerializedName("organization")
         public Organization organization;
     }

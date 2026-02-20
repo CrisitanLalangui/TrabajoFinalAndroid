@@ -1,7 +1,12 @@
 package com.example.studybro;
 
+import com.google.gson.annotations.SerializedName;
+
 public class UsuarioLogin {
+
+    @SerializedName("email")
     String email;
+    @SerializedName("password")
     String password;
     public UsuarioLogin(String email, String password) {
         this.email = email;

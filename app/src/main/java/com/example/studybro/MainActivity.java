@@ -86,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
                     desplegable.setVisibility(View.VISIBLE);
+
                 }
             });
 
@@ -124,10 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-
                     Intent intent = new Intent(MainActivity.this, Guardados.class);
                     startActivity(intent);
-
                 }
             });
 
@@ -135,10 +134,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-
                     Intent intent = new Intent(MainActivity.this, MisApuntes.class);
                     startActivity(intent);
-
 
                 }
             });
@@ -147,10 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-
                     Intent intent = new Intent(MainActivity.this, Login.class);
                     startActivity(intent);
-
 
                 }
             });
@@ -196,7 +191,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Error al iniciar: " + e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
-
     private void cargarDatos() {
         ApiInterfaz apiInterface = ApiCliente.getClient().create(ApiInterfaz.class);
         Call<Centros> call = apiInterface.getCentros();
@@ -218,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
                             String nombreCentro = center.nombreCentro != null ? center.nombreCentro : "Sin nombre";
                             String calle = (center.address != null && center.address.streetName != null) ? center.address.streetName : "S/N";
+                            String id = center.id != null ? center.id : "N/A";
 
 
                             String organizacion = "N/A", descendencia = "N/A";
@@ -233,7 +228,6 @@ public class MainActivity extends AppCompatActivity {
                                 } else
                                     organizacion = "Privado";
 
-
                                 if (descendencia.toLowerCase().contains("bachillerato")) {
                                     descendencia = "Bachillerato";
                                 } else if (descendencia.toLowerCase().contains("primaria")) {
@@ -245,11 +239,10 @@ public class MainActivity extends AppCompatActivity {
                                 } else {
                                     descendencia = "insituto";
 
-
                                 }
                             }
 
-                            temp.add(new EventModel(nombreCentro, calle, descendencia, organizacion));
+                            temp.add(new EventModel(nombreCentro, calle, descendencia, organizacion,id));
                         }
 
                         // Actualizar listas y UI

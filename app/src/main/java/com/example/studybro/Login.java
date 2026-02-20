@@ -1,5 +1,6 @@
 package com.example.studybro;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -38,6 +39,8 @@ public class Login extends AppCompatActivity {
             return insets;
         });
 
+        Context context;
+
 
         FormUtils formUtils = new FormUtils();
 
@@ -45,10 +48,14 @@ public class Login extends AppCompatActivity {
         String hashedPassword = sharedPreferences.getString("password", "");
         Log.d("hashedPassword", hashedPassword);
 
+
+
+
         Button loginButton = findViewById(R.id.loginButton);
         TextView loginTvRegister = findViewById(R.id.HipervinculoRegistrarse);
         TextInputLayout email = findViewById(R.id.TextoInputUsr);
         TextInputLayout password = findViewById(R.id.ContrasenaLogin);
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +82,7 @@ public class Login extends AppCompatActivity {
 
                 if (canContinue) {
 
+
                     UsuarioLogin usuarioLogin = new UsuarioLogin(FormUtils.getTilText(email), FormUtils.getTilText(password));
                     ApiInterfaz api = ApiCliente.getClient2().create(ApiInterfaz.class);
                     Call<ResponseBody> call = api.iniciarSesion(usuarioLogin);
@@ -84,8 +92,19 @@ public class Login extends AppCompatActivity {
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
                             if (response.isSuccessful()) {
+
+
+                                SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                editor.putString("email", email.getEditText().getText().toString());
+                                editor.apply();
+
+
                                 Toast.makeText(Login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
+
                                 Intent intentMain = new Intent(Login.this, MainActivity.class);
+
                                 startActivity(intentMain);
                             } else {
 

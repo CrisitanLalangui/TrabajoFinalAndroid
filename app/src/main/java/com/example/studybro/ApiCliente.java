@@ -10,10 +10,8 @@
 
 
         public static String BASE_URL_CENTROS = "https://datos.madrid.es/";
-        public static String BASE_URL_EMULADOR = "https://pelletlike-primely-shalanda.ngrok-free.dev/"; //Esto es un enlace web, que permite acceder
-                                                                                                        // desde cualquier dispositivo a django
-
-
+        public static String BASE_URL_EMULADOR = "http://10.0.2.2:8000/"; //Esto es un enlace web, que permite acceder
+                                                                  // desde cualquier dispositivo a djang
         public static Retrofit retrofitCentros;
         public static Retrofit retrofitEmulador;
 

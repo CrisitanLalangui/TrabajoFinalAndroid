@@ -12,12 +12,15 @@ public class EventModel {
 
     public String tipoAccesibilidad;
 
+    public String id;
 
-    public EventModel(String nombreCentro, String Localizaconi, String tipoEducacion, String tipoAccesibilidad) {
+
+    public EventModel(String nombreCentro, String Localizaconi, String tipoEducacion, String tipoAccesibilidad,String id) {
         this.nombreCentro = nombreCentro;
         this.Localizacion = Localizaconi;
         this.tipoEducacion = tipoEducacion;
         this.tipoAccesibilidad = tipoAccesibilidad;
+        this.id = id;
 
     }
 
@@ -58,4 +61,15 @@ public class EventModel {
         return tipoAccesibilidad;
     }
 
+    public void setTipoAccesibilidad(String tipoAccesibilidad) {
+        this.tipoAccesibilidad = tipoAccesibilidad;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
