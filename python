@@ -4,3 +4,116 @@ siempre hay que tener en cuenta el .env, porque si se nos desconfigura el interp
 correo = cristianlg@gmail.com
 
 contraseña = casacasa1
+
+
+# 📘 RELACIONES EN DJANGO
+
+Documento de referencia para entender y usar correctamente las relaciones entre modelos en Django.
+
+---
+
+# 🔗 TIPOS DE RELACIONES
+
+---
+
+## 🔹 1. Uno a Uno — `OneToOneField`
+
+### 📌 ¿Qué es?
+Una relación **uno a uno** indica que **cada objeto solo puede estar relacionado con un único objeto del otro modelo**.
+
+**Ejemplo real:**
+Usuario ↔ Información personal
+
+---
+
+### ✅ Argumentos obligatorios
+
+```python
+models.OneToOneField(
+    MODELO_RELACIONADO,
+    on_delete=...
+)
+
+---
+
+## 🔹 2. Muchos a Uno — `ForeignKey`
+
+### 📌 ¿Qué es?
+Una relación **muchos a uno** indica que **muchos objetos pueden estar relacionados con un único objeto de otro modelo**.
+
+**Ejemplo real:**
+Usuarios → Rol
+Personas → Ciudad
+
+---
+
+### ✅ Argumentos obligatorios
+
+```python
+models.ForeignKey(
+    MODELO_RELACIONADO,
+    on_delete=...
+)
+
+---
+
+## 🔹 2. Muchos a Uno — `ForeignKey`
+
+### 📌 ¿Qué es?
+Relación donde **muchos registros pueden apuntar a un solo registro de otro modelo**.
+
+Ejemplo real:
+Usuarios → Rol
+Personas → Ciudad
+
+---
+
+### ✅ Argumentos obligatorios
+
+```python
+models.ForeignKey(
+    MODELO_RELACIONADO,
+    on_delete=...
+)
+## 🔹 4. Muchos a Muchos — `ManyToManyField` normal
+
+### 📌 ¿Qué es?
+Una relación **muchos a muchos** donde **muchos objetos pueden relacionarse con muchos otros objetos**.
+Django **crea automáticamente la tabla intermedia**, por lo que no necesitas definirla tú mismo.
+
+**Ejemplo real:**
+Usuarios ↔ Roles
+Productos ↔ Categorías
+
+---
+
+### ✅ Argumento obligatorio
+
+```python
+models.ManyToManyField(
+    MODELO_RELACIONADO
+)
+
+# 🛠 ARGUMENTOS OPCIONALES MÁS USADOS EN RELACIONES DJANGO
+
+Estas opciones se pueden usar en **OneToOneField**, **ForeignKey** y **ManyToManyField** según corresponda.
+
+---
+
+## 🔹 `related_name`
+- Permite definir **el nombre del atributo para acceder desde el otro modelo**.
+- Ejemplo:
+```python
+user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="info_personal")
+
+
+
+ON delete set null-> Si este campo PADRE  desaparece sus hijos también
+
+ON delte models.CASCAde -> si el padre desaparece los hijos viven,
+
+
+############################ ¿¿DONDE SE PONE LA RELACIÓN ?? #####################################
+
+ La relación va siempre en el arcivo qu tiene el lado de "muchos" para el caso de 1:N
+

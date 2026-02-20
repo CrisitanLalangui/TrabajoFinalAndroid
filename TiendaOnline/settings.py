@@ -9,45 +9,68 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 from decouple import config
+import os
 
+# Clave secreta de Django (para seguridad, cookies, sesiones, etc.)
 SECRET_KEY = config("SECRET_KEY", "")
-DEBUG = config("DEBUG", cast =bool, default=True)
 
+# DEBUG = True → modo desarrollo (muestra errores detallados)
+# DEBUG = False → modo producción (no muestra errores)
+DEBUG = config("DEBUG", cast=bool, default=False)
 
-
-if SECRET_KEY =="":
+# Si no hay SECRET_KEY, el proyecto no debe arrancar
+if SECRET_KEY == "":
     raise ValueError("SECRET_KEY no establecida")
+
+# ALLOWED_HOSTS indica qué dominios pueden acceder al proyecto
 if DEBUG:
-    ALLOWED_HOSTS =["*"]
+    # En desarrollo permitimos cualquier dominio
+    ALLOWED_HOSTS = ["127.0.0.1",
+    "localhost",
+    "pelletlike-primely-shalanda.ngrok-free.dev","10.0.2.2"]
 else:
+    # En producción solo se permiten dominios específicos
     ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=[])
+
+    # Si viene como string desde .env, se convierte en lista
     if isinstance(ALLOWED_HOSTS, str):
-        ALLOWED_HOSTS = ALLOWED_HOSTS.split((""))
+        ALLOWED_HOSTS = ALLOWED_HOSTS.split(",")  # separados por comas
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Ruta base del proyecto
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 # Application definition
 
+CSRF_TRUSTED_ORIGINS = [
+     "https://pelletlike-primely-shalanda.ngrok-free.dev",
+]
+
+
 INSTALLED_APPS = [
+
+    # con esto especificamos que se deben leer los headers de las peticiones
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Para que django sepa que amos a trabajar con servicios API REST
+    'rest_framework',
+    'rest_framework_simplejwt',
 
-    #instancia de APPS Creadas
-    'Users'
+    # instancia de APPS Creadas
+    'Users',
+    'Productos',
+    'usuariosStudyBro',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  #
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,7 +99,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TiendaOnline.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
@@ -86,7 +108,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -106,11 +127,28 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
 
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "ROTATE_REFRESH_TOKEN": False,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+
+}
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-ES'
+
+LANGUAGE_CODE = 'es-ES'
 
 TIME_ZONE = 'Europe/Madrid'
 
@@ -131,5 +169,6 @@ MEDIA_ROOT = ASSETS_DIR / 'media'
 
 # STATIC_URL = 'static/'
 
-DEFAULT_AUTO_FIELD ='django.db.models.BigAutoField'
-AUTH_USER_MODEL = "Users.User"
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = "Users.User"  # Le decimos a jango que cree este modelo, osea la app que cree yo
+# en vez del modelo por defecto

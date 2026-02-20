@@ -1,0 +1,22 @@
+          +----------------------------+
+          |  Panel de Administración  |
+          |        (/admin)           |
+          +----------------------------+
+                     ▲
+                     |  Registro en admin
+       admin.site.register(Modelo, ClaseAdmin)
+       @admin.register(Modelo)
+                     |
+                     |  Configura cómo se ve el modelo
+                     |
+          +----------------------------+
+          |      Modelo en Django       |
+          |   (InfoPersonal, Ciudad)   |
+          +----------------------------+
+                     ▲
+                     |  Guarda datos reales
+                     |
+          +----------------------------+
+          |       Base de Datos        |
+          |  (Tablas con registros)   |
+          +----------------------------+

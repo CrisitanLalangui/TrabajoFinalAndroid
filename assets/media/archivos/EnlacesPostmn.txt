@@ -1,0 +1,12 @@
+
+
+
+
+Apis, Postman
+
+Get-> http://localhost:8000/api/studybro/usuariosStudyBro/ (obtener los usuarios registrados en StudyBro)
+Get -> http://localhost:8000/api/studybro/consultarArchivosStudyBro/ (obtener todos los archivos registrados en Study bro)
+Post -> http://localhost:8000/api/studybro/registroStudyBro/ (registrar usarios en StudyBro)
+Post -> http://localhost:8000/api/studybro/ligarArchivosStudyBro/ (registrar archivos en StudyBro)
+Post -> http://localhost:8000/api/studybro/loginStudyBro/ (Iniciar sesión en StudyBro)
+

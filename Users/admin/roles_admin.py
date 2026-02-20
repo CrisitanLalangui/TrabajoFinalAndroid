@@ -12,7 +12,7 @@ class RolesAdmin(admin.ModelAdmin):
 
         fieldsets = (
         ("Información del rol", {
-            "clases" : ("wide", ),
+            "classes" : ("wide", ),
             "fields" : ("name","slug","is_active")
         }),
         )

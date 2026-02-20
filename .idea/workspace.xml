@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="372dbe99-cabd-415e-8906-a6941bfb6af6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/admin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/admin/categoria_admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/admin/producto_admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/models/catgoraí_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/models/producto_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/serializers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/serializers/producto_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/views/ProductoView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Productos/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/serializers/login_serialier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/serializers/register_serializer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/views/login_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Users/views/register_view.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/usuariosStudyBro/models/ArchivoModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TiendaClase.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TiendaOnline/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TiendaOnline/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TiendaOnline/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TiendaOnline/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/admin/ciudad_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin/ciudad_admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/admin/roles_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin/roles_admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/admin/users_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/admin/users_admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models/ciudades_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models/ciudades_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models/info_personal_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models/info_personal_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models/roles_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models/roles_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/models/users_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/models/users_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/serializers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/serializers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/python" beforeDir="false" afterPath="$PROJECT_DIR$/python" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_C:/Users/crist/Desktop/Acceso a datos/Jangoo/BaseDeDatosB" value="39QkuTyTH3oYfNEnHJ0nObr957z" />
+    </persistenceIdMap>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="39QkuTyTH3oYfNEnHJ0nObr957z" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.ArchivoModel.executor": "Run",
+    "Python.ligarArchivoSerializer.executor": "Run",
+    "Python.ligarArchivoStudyView.executor": "Run",
+    "Python.login_serialier.executor": "Run",
+    "Python.settings.executor": "Run",
+    "Python.tests.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/crist/Desktop/Acceso a datos/Jangoo/BaseDeDatosB/usuariosStudyBro/models",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\crist\Desktop\Acceso a datos\Jangoo\BaseDeDatosB\usuariosStudyBro\models" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-8753aad8314d-d902c0275401-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="372dbe99-cabd-415e-8906-a6941bfb6af6" name="Changes" comment="" />
+      <created>1770635905954</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770635905954</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/usuariosStudyBro/models/userStudyModel.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/usuariosStudyBro/views/registerStudyView.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/usuariosStudyBro/views/ligarArchivoStudyView.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
+  </component>
+</project>
