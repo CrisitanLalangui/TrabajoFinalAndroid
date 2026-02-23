@@ -1,5 +1,8 @@
 package com.example.studybro;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -29,10 +32,10 @@ public interface ApiInterfaz {
             @Part("email") RequestBody email,
             @Part("nombreTarjeta") RequestBody nombreTarjeta
             );
-
     @GET("api/studybro/consultarArchivosStudyBro/")
     Call<Archivo> consultarArchivos(
 
+            @Query("email") String email
 
 
     );

@@ -13,7 +13,7 @@
         android:id="@+id/EncabezaodPrincpal"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:background="@color/azulClaro"
+        android:background="@color/naranjaSuave"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -34,7 +34,7 @@
             android:id="@+id/iconoHamburguesaApuntes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/azulClaro"
+            android:background="@color/naranjaSuave"
             android:src="@drawable/list"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:background="@color/azulClaro"
+            android:background="@color/naranjaSuave"
 
             android:src="@drawable/baseline_person_24"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -76,6 +76,21 @@
             android:hint="Buscar apuntes " />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/historicEventsARchivosRecycle"
+            app:layout_constraintTop_toBottomOf="@+id/buscarTExtipnput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:visibility="gone"
         android:id="@+id/seccionDEsplegable"
@@ -259,18 +274,9 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/historicEventsARchivosRecycle"
-        app:layout_constraintTop_toBottomOf="@+id/buscarTExtipnput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
 
 
-    </androidx.recyclerview.widget.RecyclerView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

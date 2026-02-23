@@ -44,9 +44,6 @@ public class Login extends AppCompatActivity {
 
         FormUtils formUtils = new FormUtils();
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String hashedPassword = sharedPreferences.getString("password", "");
-        Log.d("hashedPassword", hashedPassword);
 
 
 
@@ -74,10 +71,6 @@ public class Login extends AppCompatActivity {
                     password.setError("La contaseña esta vacía");
                     canContinue = false;
 
-                } else if (!FormUtils.checkPassword(FormUtils.getTilText(password),hashedPassword)) {
-                    password.setErrorEnabled(true);
-                    email.setError("La contraseña es incorrecta");
-                    canContinue = false;
                 }
 
                 if (canContinue) {

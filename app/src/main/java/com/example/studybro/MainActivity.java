@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
 
-            recyclerView = findViewById(R.id.historic_Events_Recycle);
+            recyclerView = findViewById(R.id.historicEventsARchivosRecycle);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
             adaptador = new EventsAdapterCentros(this, CentrosOriginales);
