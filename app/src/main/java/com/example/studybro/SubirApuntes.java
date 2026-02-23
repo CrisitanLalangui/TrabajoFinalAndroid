@@ -124,14 +124,17 @@ public class SubirApuntes extends AppCompatActivity {
             Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
         }
 
-
         Bundle bundle = getIntent().getExtras();
-        String idTarjeta = (bundle != null && bundle.getString("id") != null) ? bundle.getString("id") : "0";
 
-        if (idTarjeta == null){
-            idTarjeta = "0";
-            Toast.makeText(this, idTarjeta, Toast.LENGTH_SHORT).show();
+        if(bundle == null || !bundle.containsKey("nombreTarjeta")){
+            Toast.makeText(this,
+                    "Debes seleccionar un centro primero",
+                    Toast.LENGTH_LONG).show();
+            finish();
+            return;
         }
+
+        String nombreTarjeta = bundle.getString("nombreTarjeta");
 
 
         RequestBody requestFile = RequestBody.create(MediaType.parse(mimeType), bytesArchivo);
@@ -140,11 +143,11 @@ public class SubirApuntes extends AppCompatActivity {
 
         RequestBody reqName = RequestBody.create(MediaType.parse("text/plain"), nombre);
         RequestBody reqEmail = RequestBody.create(MediaType.parse("text/plain"), email);
-        RequestBody reqId = RequestBody.create(MediaType.parse("text/plain"), idTarjeta);
+        RequestBody requNombreTarjeta = RequestBody.create(MediaType.parse("text/plain"), nombreTarjeta);
 
 
         ApiInterfaz api = ApiCliente.getClient2().create(ApiInterfaz.class);
-        Call<ResponseBody> call = api.subirApuntes(filePart, reqName, reqEmail, reqId);
+        Call<ResponseBody> call = api.subirApuntes(filePart, reqName, reqEmail, requNombreTarjeta);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override

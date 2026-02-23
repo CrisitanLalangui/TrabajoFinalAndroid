@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVistas> {
+public class EventsAdapterCentros extends RecyclerView.Adapter<EventsAdapterCentros.SostenDeVistas> {
 
     //Se implmentan los tres dm´´etodos
 
@@ -28,7 +28,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
 
     ArrayList<EventModel> centros;
 
-    public EventsAdapter(Context context, ArrayList<EventModel> events) {
+    public EventsAdapterCentros(Context context, ArrayList<EventModel> events) {
         this.context = context;
         centros = events;
 
@@ -52,7 +52,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
         sosten.location.setText(centros.get(position).getLocalizacion());
         sosten.tipoAccesibilidad.setText(centros.get(position).getTipoAccesibilidad());
 
-        String id = centros.get(position).getId();
+        String nombreCentro = centros.get(position).getNombreCentro();
 
 
 
@@ -62,7 +62,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.SostenDeVi
             public void onClick(View v) {
 
                 Bundle bundle = new Bundle();
-                bundle.putString("id", id);
+                bundle.putString("nombreTarjeta", nombreCentro);
                 Intent intent = new Intent(context, SubirApuntes.class);
 
                 intent.setFlags(FLAG_ACTIVITY_NEW_TASK);

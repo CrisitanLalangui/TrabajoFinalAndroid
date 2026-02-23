@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<EventModel> CentrosOriginales = new ArrayList<>();
     ArrayList<EventModel> CentrosCopia = new ArrayList<>();
-    EventsAdapter adaptador;
+    EventsAdapterCentros adaptador;
 
     private void filtrar(String texto) {
         try {
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerView = findViewById(R.id.historic_Events_Recycle);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-            adaptador = new EventsAdapter(this, CentrosOriginales);
+            adaptador = new EventsAdapterCentros(this, CentrosOriginales);
             recyclerView.setAdapter(adaptador);
 
             // Buscador

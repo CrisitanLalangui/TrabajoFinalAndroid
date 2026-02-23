@@ -27,8 +27,15 @@ public interface ApiInterfaz {
             @Part MultipartBody.Part url,
             @Part("name") RequestBody name,
             @Part("email") RequestBody email,
-            @Part("idTarjeta") RequestBody idTarjeta
+            @Part("nombreTarjeta") RequestBody nombreTarjeta
             );
+
+    @GET("api/studybro/consultarArchivosStudyBro/")
+    Call<Archivo> consultarArchivos(
+
+
+
+    );
 
 
 
