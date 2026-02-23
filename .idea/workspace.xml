@@ -6,6 +6,44 @@
   <component name="ChangeListManager">
     <list default="true" id="372dbe99-cabd-415e-8906-a6941bfb6af6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Users/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__2s1iLWO.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__AqS4wEK.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__C1SMb9j.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__MBtIuva.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__NPp9u1s.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__PlTdPOe.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__Uj3r5Ds.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__V0lCxrZ.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__Vzydc1h.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__Wiozu24.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__belX8uC.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__igoJD5V.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CRISTIAN_LALANGUI_GUILLCA_BV__zvsVxRE.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CristianLalangui_CartaPresentacionTrabajo_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CristianLalangui_CartaPresentacionTrabajo_1_BNiyw2o.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/CristianLalangui_CartaPresentacion_Practicaspdf.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1_BEA8siJ.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1_GJK1kbO.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1_OzBt76e.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1_YfHW4sx.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1_ZbioNIG.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_Python_1_aROecMh.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Ejercicios_UT2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/EnlacePostcasts_CristianLalangui.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/EnlacesPostmn.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/media/archivos/Informes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/admin/Archivo_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/admin/Archivo_admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/models/ArchivoModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/models/ArchivoModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/serializers/ligarArchivoSerializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/serializers/ligarArchivoSerializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/views/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/views/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/views/ligarArchivoStudyView.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/views/ligarArchivoStudyView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usuariosStudyBro/views/registerStudyView.py" beforeDir="false" afterPath="$PROJECT_DIR$/usuariosStudyBro/views/registerStudyView.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,26 +73,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.ArchivoModel.executor": "Run",
-    "Python.ligarArchivoSerializer.executor": "Run",
-    "Python.ligarArchivoStudyView.executor": "Run",
-    "Python.login_serialier.executor": "Run",
-    "Python.settings.executor": "Run",
-    "Python.tests.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/crist/Desktop/Acceso a datos/Jangoo/BaseDeDatosB/usuariosStudyBro/models",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.ArchivoModel.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ligarArchivoSerializer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ligarArchivoStudyView.executor&quot;: &quot;Run&quot;,
+    &quot;Python.login_serialier.executor&quot;: &quot;Run&quot;,
+    &quot;Python.settings.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;django&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/crist/Desktop/Acceso a datos/Jangoo/BaseDeDatosB/usuariosStudyBro/models&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\crist\Desktop\Acceso a datos\Jangoo\BaseDeDatosB\usuariosStudyBro\models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\crist\Desktop\Acceso a datos\Jangoo\BaseDeDatosB\usuariosStudyBro" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -86,11 +127,6 @@
           <url>file://$PROJECT_DIR$/usuariosStudyBro/views/registerStudyView.py</url>
           <line>27</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/usuariosStudyBro/views/ligarArchivoStudyView.py</url>
-          <line>15</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -28,9 +28,6 @@ class RegisterViewStudyBro(APIView):
             {"success": True, "data": data2}, status=status.HTTP_200_OK)
 
 
-class RegisterStudyBro(APIView):
-    permission_classes = [AllowAny]
-
     def post(self, request):
 
         # Si queremos acceder a los elementos del body, usamos request.data

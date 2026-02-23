@@ -8,13 +8,13 @@ class ligarArchivoSerializer(serializers.ModelSerializer):
     name = serializers.CharField(required=True)
     email = serializers.EmailField(required=True)
     url = serializers.FileField(required=True)
-    idTarjeta = serializers.CharField(required=True)
+    nombreTarjeta = serializers.CharField(required=True)
 
     class Meta:
         model = ArchivoModel
 
         fields = (
-            "name", "email", "url", "idTarjeta"
+            "name", "email", "url", "nombreTarjeta"
         )
 
     # Estas clases se validan solas, porque el validate_(nombre) lleva el nombre del serializer
@@ -51,7 +51,7 @@ class ligarArchivoSerializer(serializers.ModelSerializer):
 
             name=validated_data["name"],
             url=validated_data["url"],
-            idTarjeta=validated_data["idTarjeta"],
+            nombreTarjeta=validated_data["nombreTarjeta"],
             usuario = emailUser
 
         )

@@ -13,13 +13,28 @@ class consultarArchivosStudyView(APIView):
     permission_classes = (AllowAny,)
 
     def get(self, request):
-        archivos = ArchivoModel.objects.all()
+        queryEmail = request.GET.get('email')
+
+        if  queryEmail:
+            archivos = ArchivoModel.objects.filter(usuario__email=queryEmail)
+
+
+        else:
+
+            archivos = ArchivoModel.objects.all()
         data = [
             {
-                "name": archivo.name,
-                "email": archivo.usuario.email if archivo.usuario else "", #Necesario para obtner el campo de un objeto
-                "url": f"{archivo.url}"
-            } for archivo in archivos
+                "slugArchivo": archivo.slug,
+                "archivo": {
+                    "name": archivo.name,
+                    "email": archivo.usuario.email if archivo.usuario else "",
+
+                    "nombreTarjeta": archivo.nombreTarjeta,
+                    "url": f"{archivo.url}"
+                }
+            }
+
+            for archivo in archivos
         ]
 
         return Response(
@@ -37,8 +52,8 @@ class ligarArchivoStudyView(APIView):
 
             data = {
                 "name": archivo.name,
-                "email":  archivo.usuario.email if archivo.usuario else "",
-                "idTarjeta": archivo.idTarjeta,
+                "email": archivo.usuario.email if archivo.usuario else "",
+                "nombreTarjeta": archivo.nombreTarjeta,
                 "url": archivo.url.url
             }
             return Response({"success": True, "data": data}, status=status.HTTP_200_OK)

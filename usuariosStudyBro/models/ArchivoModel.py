@@ -7,7 +7,7 @@ class ArchivoModel(models.Model):
     name = models.CharField(max_length=45, null=False, blank=False, verbose_name="nombre")
     slug = models.SlugField(max_length=200, blank=True, null=True, unique=True)
     url = models.FileField(upload_to="archivos/")
-    idTarjeta = models.CharField(max_length=6,blank=True,null=True)
+    nombreTarjeta = models.CharField(max_length=50,blank=True,null=True)
 
 
 
