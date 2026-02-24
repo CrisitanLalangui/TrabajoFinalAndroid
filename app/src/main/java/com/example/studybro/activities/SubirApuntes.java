@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,6 +16,10 @@ import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.studybro.R;
+import com.example.studybro.apis.ApiCliente;
+import com.example.studybro.apis.ApiInterfaz;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -90,7 +94,7 @@ public class SubirApuntes extends AppCompatActivity {
 
 
 
-            // Obtener nombre real
+
             try (android.database.Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
                 if (cursor != null && cursor.moveToFirst()) {
                     int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);

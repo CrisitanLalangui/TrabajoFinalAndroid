@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.activities;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -22,6 +22,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.studybro.R;
+import com.example.studybro.adapters.EventsAdapterCentros;
+import com.example.studybro.apis.ApiCliente;
+import com.example.studybro.apis.ApiInterfaz;
+import com.example.studybro.event_models.EventModelCentros;
+import com.example.studybro.models.Centros;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -34,8 +40,8 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<EventModel> CentrosOriginales = new ArrayList<>();
-    ArrayList<EventModel> CentrosCopia = new ArrayList<>();
+    ArrayList<EventModelCentros> CentrosOriginales = new ArrayList<>();
+    ArrayList<EventModelCentros> CentrosCopia = new ArrayList<>();
     EventsAdapterCentros adaptador;
 
     SpinKitView spinKitView;
@@ -47,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 CentrosOriginales.addAll(CentrosCopia);
             } else {
                 String query = texto.toLowerCase().trim();
-                for (EventModel event : CentrosCopia) {
+                for (EventModelCentros event : CentrosCopia) {
                     if (event.getNombreCentro() != null && event.getNombreCentro().toLowerCase().contains(query)) {
                         CentrosOriginales.add(event);
                     }
@@ -215,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                         Centros centrosListado = response.body();
                         if (centrosListado.centrosMadrid == null) return;
 
-                        ArrayList<EventModel> temp = new ArrayList<>();
+                        ArrayList<EventModelCentros> temp = new ArrayList<>();
                         int limite = Math.min(50, centrosListado.centrosMadrid.size());
 
                         for (int i = 0; i < limite; i++) {
@@ -253,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
 
-                            temp.add(new EventModel(nombreCentro, calle, descendencia, organizacion,id));
+                            temp.add(new EventModelCentros(nombreCentro, calle, descendencia, organizacion,id));
                         }
 
                         // Actualizar listas y UI

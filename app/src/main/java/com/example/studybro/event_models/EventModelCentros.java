@@ -1,8 +1,8 @@
-package com.example.studybro;
+package com.example.studybro.event_models;
 
 import androidx.annotation.NonNull;
 
-public class EventModel {
+public class EventModelCentros {
 
     public String nombreCentro;
 
@@ -15,7 +15,7 @@ public class EventModel {
     public String id;
 
 
-    public EventModel(String nombreCentro, String Localizaconi, String tipoEducacion, String tipoAccesibilidad,String id) {
+    public EventModelCentros(String nombreCentro, String Localizaconi, String tipoEducacion, String tipoAccesibilidad, String id) {
         this.nombreCentro = nombreCentro;
         this.Localizacion = Localizaconi;
         this.tipoEducacion = tipoEducacion;

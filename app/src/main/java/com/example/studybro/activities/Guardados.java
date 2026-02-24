@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.studybro.R;
 
 public class Guardados extends AppCompatActivity {
 

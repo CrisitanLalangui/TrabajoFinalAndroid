@@ -1,6 +1,6 @@
-package com.example.studybro;
+package com.example.studybro.event_models;
 
-public class CargaArchivos {
+public class EventModelArchivos {
 
 
 
@@ -12,7 +12,7 @@ public class CargaArchivos {
 
     String nameTarjeta;
 
-    public CargaArchivos(String name, String url, String email, String nameTarjeta) {
+    public EventModelArchivos(String name, String url, String email, String nameTarjeta) {
         this.name = name;
         this.url = url;
         this.email = email;

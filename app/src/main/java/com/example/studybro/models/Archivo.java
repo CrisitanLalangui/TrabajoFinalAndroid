@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.models;
 
 import com.google.gson.annotations.SerializedName;
 

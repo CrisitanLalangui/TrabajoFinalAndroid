@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +15,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.studybro.FormUtils;
+import com.example.studybro.R;
+import com.example.studybro.models.UsuarioRegistro;
+import com.example.studybro.apis.ApiCliente;
+import com.example.studybro.apis.ApiInterfaz;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.IOException;

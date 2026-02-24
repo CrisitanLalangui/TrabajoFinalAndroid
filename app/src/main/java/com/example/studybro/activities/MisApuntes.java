@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,11 +13,17 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
-import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.studybro.R;
+import com.example.studybro.adapters.EventsAdapterArchivos;
+import com.example.studybro.apis.ApiCliente;
+import com.example.studybro.apis.ApiInterfaz;
+import com.example.studybro.event_models.EventModelArchivos;
+import com.example.studybro.models.Archivo;
 
 import java.util.ArrayList;
 
@@ -31,8 +37,8 @@ public class MisApuntes extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
-    ArrayList<CargaArchivos> archivosMisApuntes = new ArrayList<>();
-    ArrayList<CargaArchivos> copiaArchivosMisApuntes = new ArrayList<>();
+    ArrayList<EventModelArchivos> archivosMisApuntes = new ArrayList<>();
+    ArrayList<EventModelArchivos> copiaArchivosMisApuntes = new ArrayList<>();
 
 
 
@@ -87,8 +93,8 @@ public class MisApuntes extends AppCompatActivity {
 
 
                 for (int i = 0; i < email.size(); i++) {
-                    archivosMisApuntes.add(new CargaArchivos(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));
-                    copiaArchivosMisApuntes.add(new CargaArchivos(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));
+                    archivosMisApuntes.add(new EventModelArchivos(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));
+                    copiaArchivosMisApuntes.add(new EventModelArchivos(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));
 
                 }
                 adaptador.notifyDataSetChanged();

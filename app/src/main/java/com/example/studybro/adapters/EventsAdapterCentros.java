@@ -1,4 +1,4 @@
-package com.example.studybro;
+package com.example.studybro.adapters;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
@@ -14,6 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.studybro.R;
+import com.example.studybro.activities.SubirApuntes;
+import com.example.studybro.event_models.EventModelCentros;
+
 import java.util.ArrayList;
 
 public class EventsAdapterCentros extends RecyclerView.Adapter<EventsAdapterCentros.SostenDeVistas> {
@@ -26,9 +30,9 @@ public class EventsAdapterCentros extends RecyclerView.Adapter<EventsAdapterCent
     CardView cardView;
 
 
-    ArrayList<EventModel> centros;
+    ArrayList<EventModelCentros> centros;
 
-    public EventsAdapterCentros(Context context, ArrayList<EventModel> events) {
+    public EventsAdapterCentros(Context context, ArrayList<EventModelCentros> events) {
         this.context = context;
         centros = events;
 

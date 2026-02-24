@@ -1,7 +1,9 @@
-package com.example.studybro;
+package com.example.studybro.apis;
 
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
+import com.example.studybro.models.Archivo;
+import com.example.studybro.models.Centros;
+import com.example.studybro.models.UsuarioLogin;
+import com.example.studybro.models.UsuarioRegistro;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;

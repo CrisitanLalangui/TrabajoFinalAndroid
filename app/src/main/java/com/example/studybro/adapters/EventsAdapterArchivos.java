@@ -1,14 +1,9 @@
-package com.example.studybro;
-
-import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
-
+package com.example.studybro.adapters;
 
 
 import android.app.DownloadManager;
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.studybro.R;
+import com.example.studybro.event_models.EventModelArchivos;
+import com.example.studybro.event_models.EventModelCentros;
+
 import java.util.ArrayList;
 
 public class EventsAdapterArchivos extends RecyclerView.Adapter<EventsAdapterArchivos.SostenDeVistas> {
@@ -27,19 +26,19 @@ public class EventsAdapterArchivos extends RecyclerView.Adapter<EventsAdapterArc
 
     //static
     Context context; // El permiso
-    ArrayList<CargaArchivos> archivos;
+    ArrayList<EventModelArchivos> archivos;
 
     Button botonDescargar;
     DownloadManager manager;
 
-    ArrayList<EventModel> centros;
+    ArrayList<EventModelCentros> centros;
 
 
 
     CardView cardView;
 
 
-    public EventsAdapterArchivos(Context context, ArrayList<CargaArchivos> events) {
+    public EventsAdapterArchivos(Context context, ArrayList<EventModelArchivos> events) {
         this.context = context;
         archivos = events;
 
@@ -59,7 +58,7 @@ public class EventsAdapterArchivos extends RecyclerView.Adapter<EventsAdapterArc
     @Override
     public void onBindViewHolder(@NonNull SostenDeVistas sosten, int position) {
 
-        CargaArchivos archivoActual = archivos.get(position);
+        EventModelArchivos archivoActual = archivos.get(position);
         String url = archivoActual.getUrl(); // Asumiendo que CargaArchivos tiene getUrl()
         String nombreArchivo = archivoActual.getName();
         String nombreTarjeta = archivoActual.getNameTarjeta();

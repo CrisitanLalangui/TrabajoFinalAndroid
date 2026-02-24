@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azulClaro"
-    tools:context=".PerfilUsuario">
+    tools:context=".activities.PerfilUsuario">
 
     <ImageButton
         android:id="@+id/menuHamburguesaPerfil"
