@@ -9,6 +9,7 @@
     tools:context=".SubirApuntes">
 
     <TextView
+        android:paddingBottom="35dp"
         android:id="@+id/ApunteActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +17,7 @@
         android:text="Subir Archivo"
         android:textSize="32sp"
         android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -41,6 +43,7 @@
         android:layout_height="wrap_content">
 
         <EditText
+
             android:id="@+id/textInputLayoutnombreApunte"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -89,7 +92,7 @@
         android:id="@+id/botonGuardarApuntes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="54dp"
         android:backgroundTint="@color/azulOscuro"
         android:padding="12dp"
         android:text="Guardar"

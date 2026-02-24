@@ -1,3 +1,5 @@
+
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -36,6 +38,7 @@ android {
 
 dependencies {
 
+    implementation("com.github.ybq:Android-SpinKit:1.4.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")//REtrofit para devolver un json
     implementation("com.airbnb.android:lottie:6.3.0")//animaciones para el splash

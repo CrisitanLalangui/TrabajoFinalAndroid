@@ -1,5 +1,8 @@
 package com.example.studybro;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -33,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<EventModel> CentrosOriginales = new ArrayList<>();
     ArrayList<EventModel> CentrosCopia = new ArrayList<>();
     EventsAdapterCentros adaptador;
+
+    SpinKitView spinKitView;
 
     private void filtrar(String texto) {
         try {
@@ -66,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
             EdgeToEdge.enable(this);
             setContentView(R.layout.activity_main);
 
+            spinKitView = findViewById(R.id.spin_kitAnimation);
+
+            spinKitView.setVisibility(VISIBLE);
+
             ImageButton iconoPersona = findViewById(R.id.iconoPersonaPrincipal);
 
             iconoPersona.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    desplegable.setVisibility(View.VISIBLE);
+                    desplegable.setVisibility(VISIBLE);
 
                 }
             });
@@ -96,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    desplegable.setVisibility(View.GONE);
+                    desplegable.setVisibility(GONE);
                 }
 
             });
@@ -192,6 +202,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void cargarDatos() {
+
+        spinKitView.setVisibility(VISIBLE);
         ApiInterfaz apiInterface = ApiCliente.getClient().create(ApiInterfaz.class);
         Call<Centros> call = apiInterface.getCentros();
 
@@ -202,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         Centros centrosListado = response.body();
                         if (centrosListado.centrosMadrid == null) return;
-
 
                         ArrayList<EventModel> temp = new ArrayList<>();
                         int limite = Math.min(50, centrosListado.centrosMadrid.size());
@@ -251,6 +262,7 @@ public class MainActivity extends AppCompatActivity {
                         CentrosOriginales.addAll(temp);
                         CentrosCopia.addAll(temp);
                         adaptador.notifyDataSetChanged();
+                        spinKitView.setVisibility(GONE);
 
                     } catch (Exception e) {
                         Log.e("ERROR_PROCESANDO", e.getMessage());
@@ -260,7 +272,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Centros> call, Throwable t) {
-                Log.e("API_FAILURE", t.getMessage());
+                spinKitView.setVisibility(GONE);
+                Log.e("Error de conexión", t.getMessage());
             }
         });
     }
