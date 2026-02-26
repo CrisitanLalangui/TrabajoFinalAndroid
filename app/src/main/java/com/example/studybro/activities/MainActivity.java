@@ -23,16 +23,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studybro.R;
-import com.example.studybro.adapters.EventsAdapterCentros;
+import com.example.studybro.adapters.EventsAdapterCentrosApiPublica;
 import com.example.studybro.apis.ApiCliente;
 import com.example.studybro.apis.ApiInterfaz;
-import com.example.studybro.event_models.EventModelCentros;
+import com.example.studybro.event_models.EventModelCentrosApiPública;
 import com.example.studybro.models.Centros;
+import com.example.studybro.models.CentrosDjango;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,9 +42,11 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ArrayList<EventModelCentros> CentrosOriginales = new ArrayList<>();
-    ArrayList<EventModelCentros> CentrosCopia = new ArrayList<>();
-    EventsAdapterCentros adaptador;
+
+
+    ArrayList<EventModelCentrosApiPública> CentrosOriginales = new ArrayList<>();
+    ArrayList<EventModelCentrosApiPública> CentrosCopia = new ArrayList<>();
+    EventsAdapterCentrosApiPublica adaptador;
 
     SpinKitView spinKitView;
 
@@ -53,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 CentrosOriginales.addAll(CentrosCopia);
             } else {
                 String query = texto.toLowerCase().trim();
-                for (EventModelCentros event : CentrosCopia) {
+                for (EventModelCentrosApiPública event : CentrosCopia) {
                     if (event.getNombreCentro() != null && event.getNombreCentro().toLowerCase().contains(query)) {
                         CentrosOriginales.add(event);
                     }
@@ -178,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
             recyclerView = findViewById(R.id.historicEventsARchivosRecycle);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-            adaptador = new EventsAdapterCentros(this, CentrosOriginales);
+            adaptador = new EventsAdapterCentrosApiPublica(this, CentrosOriginales);
             recyclerView.setAdapter(adaptador);
 
             // Buscador
@@ -221,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                         Centros centrosListado = response.body();
                         if (centrosListado.centrosMadrid == null) return;
 
-                        ArrayList<EventModelCentros> temp = new ArrayList<>();
+                        ArrayList<EventModelCentrosApiPública> temp = new ArrayList<>();
                         int limite = Math.min(50, centrosListado.centrosMadrid.size());
 
                         for (int i = 0; i < limite; i++) {
@@ -259,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             }
 
-                            temp.add(new EventModelCentros(nombreCentro, calle, descendencia, organizacion,id));
+                            temp.add(new EventModelCentrosApiPública(nombreCentro, calle, descendencia, organizacion,id));
                         }
 
                         // Actualizar listas y UI
@@ -269,6 +273,40 @@ public class MainActivity extends AppCompatActivity {
                         CentrosCopia.addAll(temp);
                         adaptador.notifyDataSetChanged();
                         spinKitView.setVisibility(GONE);
+                        for( int i = 0; i< CentrosOriginales.size();i++) {
+
+                            CentrosDjango centrosDjango = new CentrosDjango(CentrosOriginales.get(i).getNombreCentro());
+                            ApiInterfaz apiInterfaz = ApiCliente.getClient2().create(ApiInterfaz.class);
+                            Call<ResponseBody> call2 = apiInterfaz.registrarCentros(centrosDjango);
+
+
+
+                            call2.enqueue(new Callback<ResponseBody>() {
+
+
+                                @Override
+                                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                                    if (response.isSuccessful()) {
+                                        Toast.makeText(MainActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+
+                                    } else {
+
+                                        Toast.makeText(MainActivity.this, "NO se han creado los centros en django", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+
+                                @Override
+                                public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+                                    Toast.makeText(MainActivity.this, "Ha habido un error  en el registro de centros", Toast.LENGTH_SHORT).show();
+                                }
+
+                            });
+
+                        }
+
 
                     } catch (Exception e) {
                         Log.e("ERROR_PROCESANDO", e.getMessage());
@@ -282,5 +320,51 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Error de conexión", t.getMessage());
             }
         });
+
+        /**
+         * UsuarioRegistro usuarioRegistro = new UsuarioRegistro(correoElectronico, contraseña, confirmarContraseña);
+         *                     ApiInterfaz api = ApiCliente.getClient2().create(ApiInterfaz.class);
+         *                     //El response Body es para enviar una respuesta al servidor
+         *                     Call<ResponseBody> call = api.registrarUsuario(usuarioRegistro);
+         *
+         *                     call.enqueue(new Callback<ResponseBody>() {
+         *                         @Override
+         *                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+         *
+         *
+         *                             if (response.isSuccessful()) {
+         *                                 Toast.makeText(Register.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
+         *
+         *                                 Intent intentMain = new Intent(Register.this, Login.class);
+         *                                 startActivity(intentMain);
+         *                             } else {
+         *
+         *
+         *                                 try {
+         *                                     String error = response.errorBody().string();
+         *                                     error = error.replace("{\"success\":false,\"errors\":[\"", "");
+         *                                     error = error.replace("\"}", "");
+         *                                     Toast.makeText(Register.this, error, Toast.LENGTH_SHORT).show();
+         *
+         *                                 } catch (IOException e) {
+         *                                     throw new RuntimeException(e);
+         *                                 }
+         *                             }
+         *                         }
+         *
+         *                         @Override
+         *                         public void onFailure(Call<ResponseBody> call, Throwable t) {
+         *
+         *                             Toast.makeText(Register.this, "Ha habido un error  en el registro", Toast.LENGTH_SHORT).show();
+         *                         }
+         *                     });
+         */
+
+
+
+
     }
+
+
+
 }

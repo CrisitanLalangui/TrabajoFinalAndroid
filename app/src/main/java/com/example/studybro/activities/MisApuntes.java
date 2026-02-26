@@ -73,7 +73,6 @@ public class MisApuntes extends AppCompatActivity {
 
         call.enqueue(new Callback<Archivo>() {
 
-
             @Override
             public void onResponse(Call<Archivo> call, Response<Archivo> response) {
 
@@ -90,7 +89,6 @@ public class MisApuntes extends AppCompatActivity {
                     url.add(f.fileDetail.url);
                     name.add(f.fileDetail.name);
                 }
-
 
                 for (int i = 0; i < email.size(); i++) {
                     archivosMisApuntes.add(new EventModelArchivos(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));

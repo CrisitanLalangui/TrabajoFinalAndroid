@@ -23,7 +23,6 @@ public class Centros {
         @SerializedName("organization")
         public Organization organization;
     }
-
     public static class Address {
         // En el JSON es "street-address"
         @SerializedName("street-address")

@@ -1,7 +1,9 @@
 package com.example.studybro.apis;
 
 import com.example.studybro.models.Archivo;
+import com.example.studybro.models.ArchivosCentro;
 import com.example.studybro.models.Centros;
+import com.example.studybro.models.CentrosDjango;
 import com.example.studybro.models.UsuarioLogin;
 import com.example.studybro.models.UsuarioRegistro;
 
@@ -34,6 +36,10 @@ public interface ApiInterfaz {
             @Part("email") RequestBody email,
             @Part("nombreTarjeta") RequestBody nombreTarjeta
             );
+
+
+    @POST("api/studybro/centrosStudyBro/")
+    Call<ResponseBody> registrarCentros(@Body CentrosDjango centrosDjango);
     @GET("api/studybro/consultarArchivosStudyBro/")
     Call<Archivo> consultarArchivos(
 
@@ -42,7 +48,16 @@ public interface ApiInterfaz {
 
     );
 
+    //obtenerArchivosCentro
 
+
+    @GET("api/studybro/obtenerArchivosCentro/")
+    Call<ArchivosCentro> recogerArchivos(
+
+            @Query("nombreTarjeta") String nombreTarjeta
+
+
+    );
 
 
 }

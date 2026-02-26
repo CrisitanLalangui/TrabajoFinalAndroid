@@ -17,16 +17,14 @@
 
         public static Retrofit getClient() {
             if (retrofitCentros == null) {
-                // Configuración del interceptor para ver los logs de las peticiones
+
                 HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
                 interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
-                // Configuración del cliente OkHttp
                 OkHttpClient client = new OkHttpClient.Builder()
                         .addInterceptor(interceptor)
                         .build();
 
-                // Configuración de Retrofit
                 retrofitCentros = new Retrofit.Builder()
                         .baseUrl(BASE_URL_CENTROS)
                         .addConverterFactory(GsonConverterFactory.create()) // Se agrega el conversor (usualmente Gson)

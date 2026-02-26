@@ -8,22 +8,21 @@
     android:layout_height="match_parent"
     tools:context=".activities.Login">
 
+
     <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/LoginLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:paddingTop="16dp"
+        android:text="Bienvenido de nuevo"
+        android:textColor="@color/azulClaro"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/LoginLogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="35dp"
-        android:textStyle="bold"
-        android:textColor="@color/azulClaro"
-        android:paddingTop="16dp"
-        android:textSize="26sp"
-        android:text="Bienvenido de Nuevo"/>
-
-
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/LoginGLv1"
@@ -148,7 +147,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="¿Aún no tiene una cuenta?Pulse aquí para registrarse"
+        android:text="¿Aún no tiene una cuenta? \n Pulse aquí para registrarse"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintLeft_toRightOf="@id/LoginGLv1"
