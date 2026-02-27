@@ -34,21 +34,21 @@
 
 
             <TextView
-                android:id="@+id/tituloTarjetaApunte"
+                android:id="@+id/tituloARchivo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:text="usuario"
+                android:text="Fichero"
 
                 android:textSize="35dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tituloApunte"
+                android:id="@+id/tituloUsuario"
                 android:layout_width="match_parent"
                 android:textAlignment="center"
                 android:layout_height="wrap_content"
-                android:text="tituloArchivo"
+                android:text="usuario"
                 android:textColor="@color/tituloArchivo"
                 android:textSize="21dp" />
 

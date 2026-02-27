@@ -287,15 +287,7 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                                    if (response.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "Registro exitoso", Toast.LENGTH_SHORT).show();
-
-                                    } else {
-
-                                        Toast.makeText(MainActivity.this, "NO se han creado los centros en django", Toast.LENGTH_SHORT).show();
-                                    }
                                 }
-
 
                                 @Override
                                 public void onFailure(Call<ResponseBody> call, Throwable t) {

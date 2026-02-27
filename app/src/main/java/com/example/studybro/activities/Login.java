@@ -42,6 +42,11 @@ public class Login extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        SharedPreferences sharedPreferences =
+                PreferenceManager.getDefaultSharedPreferences(this);
+
+        String autocompletado = sharedPreferences.getString("email", "");
+
 
         Context context;
 
@@ -50,12 +55,11 @@ public class Login extends AppCompatActivity {
 
 
 
-
-
         Button loginButton = findViewById(R.id.loginButton);
         TextView loginTvRegister = findViewById(R.id.HipervinculoRegistrarse);
         TextInputLayout email = findViewById(R.id.TextoInputUsr);
         TextInputLayout password = findViewById(R.id.ContrasenaLogin);
+        email.getEditText().setText(autocompletado);
 
 
 
@@ -90,12 +94,12 @@ public class Login extends AppCompatActivity {
 
                             if (response.isSuccessful()) {
 
-
                                 SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(Login.this);
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
 
                                 editor.putString("email", email.getEditText().getText().toString());
                                 editor.apply();
+
 
 
                                 Toast.makeText(Login.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();

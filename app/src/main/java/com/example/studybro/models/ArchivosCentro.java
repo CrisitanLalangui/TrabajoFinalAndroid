@@ -12,6 +12,12 @@ public class ArchivosCentro {
 
     public static class archivosDelCentro {
 
+        @SerializedName("archivo")
+        public FileDetailCentro fileDetailCentro;
+    }
+
+    public static class FileDetailCentro {
+
         @SerializedName("name")
         public String name;
 
@@ -23,7 +29,7 @@ public class ArchivosCentro {
 
         @SerializedName("email")
         public String email;
-
     }
+
 
 }

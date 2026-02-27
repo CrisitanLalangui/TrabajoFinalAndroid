@@ -2,9 +2,12 @@ package com.example.studybro.activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -44,6 +47,10 @@ public class PerfilUsuario extends AppCompatActivity {
         TextView nameStudent = findViewById(R.id.nombreEstudiante);
         TextView descripcionNombreAlumno = findViewById(R.id.descripcionNOmbreAlumno);
         TextView descripcionNombreEstudio = findViewById(R.id.descripcionNombreEstudio);
+
+
+        Button botonGuardarApuntes = findViewById(R.id.botonGuardarApuntes);
+
 
         ConstraintLayout desplegable = findViewById(R.id.seccionDEsplegable);
 
@@ -136,8 +143,6 @@ public class PerfilUsuario extends AppCompatActivity {
                 View view = inflater.inflate(R.layout.alert_dialog, null);
                 TextInputLayout textInputLayout = view.findViewById(R.id.idTExtoINputLayout);
                 EditText editText = view.findViewById(R.id.textInputEditText);
-
-
 
 
                 builder.setTitle("Centro educativo")
@@ -315,6 +320,55 @@ public class PerfilUsuario extends AppCompatActivity {
 
                 builder.create().show();
 
+            }
+        });
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(PerfilUsuario.this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+
+
+        String especialidad = sharedPreferences.getString("especialidad", null);
+        String descripcionEstudio = sharedPreferences.getString("descripcionEstudio", null);
+        String nombreEstudiatne = sharedPreferences.getString("nombreUsuario", null);
+        String descripcionUsuario = sharedPreferences.getString("descripcionUsuario", null);
+        String especialidadUsuario = sharedPreferences.getString("especialidadUsuario", null);
+        String nombreCentroUsuario = sharedPreferences.getString("nombreCentroUsuario", null);
+        String desripcionEstudioUsuaario = sharedPreferences.getString("descripcionEstudioUsuario", null);
+
+
+        nameSpeciality.setText(especialidad);
+        descripcionNombreEstudio.setText(descripcionEstudio);
+        nameStudent.setText(nombreEstudiatne);
+        descripcionNombreAlumno.setText(descripcionUsuario);
+        nameSpeciality.setText(especialidadUsuario);
+        nameTitleCenter.setText(nombreCentroUsuario);
+        descripcionNombreEstudio.setText(desripcionEstudioUsuaario);
+
+        editor.apply();
+
+
+        botonGuardarApuntes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(PerfilUsuario.this);
+                SharedPreferences.Editor editor = preferences.edit();
+
+
+                editor.putString("especialidad", nameSpeciality.getText().toString());
+                editor.putString("descripcionEstudio", descripcionNombreEstudio.getText().toString());
+                editor.putString("nombreUsuario", nameStudent.getText().toString());
+                editor.putString("descripcionUsuario", descripcionNombreAlumno.getText().toString());
+                editor.putString("especialidadUsuario", nameSpeciality.getText().toString());
+                editor.putString("nombreCentroUsuario", nameTitleCenter.getText().toString());
+                editor.putString("descripcionEstudioUsuario", descripcionNombreEstudio.getText().toString());
+                editor.apply();
+
+
+                Intent intentPerfil = new Intent(PerfilUsuario.this, MisApuntes.class);
+                Toast.makeText(PerfilUsuario.this, "Información guardada con éxito correctamente", Toast.LENGTH_SHORT).show();
+                startActivity(intentPerfil);
             }
         });
 

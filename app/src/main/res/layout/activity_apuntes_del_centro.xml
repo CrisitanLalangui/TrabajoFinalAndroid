@@ -13,7 +13,7 @@
         android:id="@+id/EncabezdoPrincipal"
         android:layout_width="match_parent"
         android:layout_height="85dp"
-        android:background="@color/naranjaSuave"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -22,42 +22,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Todos los apuntes"
-            android:textColor="@color/BlancoHumno"
+            android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/EncabezdoPrincipal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/EncabezdoPrincipal" />
-
-        <ImageButton
-            android:id="@+id/iconoHamburguesaApuntes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/naranjaSuave"
-            android:src="@drawable/list"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
-
-        <ImageButton
-
-            android:id="@+id/iconoPersonaApuntes"
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:background="@color/naranjaSuave"
-
-            android:src="@drawable/baseline_person_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.textfield.TextInputLayout
@@ -75,7 +46,6 @@
             android:hint="Buscar apuntes " />
 
     </com.google.android.material.textfield.TextInputLayout>
-
 
     <androidx.recyclerview.widget.RecyclerView
 

@@ -10,6 +10,8 @@ import com.example.studybro.activities.ApuntesDelCentro;
 import com.example.studybro.activities.subirApuntes2;
 
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 
@@ -18,6 +20,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 public class Paginador extends FragmentStatePagerAdapter  {
 
     private Bundle bundle;
+
 
     public Paginador(@NonNull FragmentManager fm) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);

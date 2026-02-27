@@ -27,19 +27,10 @@ public class EventsAdapterArchivosCentro extends RecyclerView.Adapter<EventsAdap
     Context context; // El permiso
     ArrayList<EventModelARchivosCentro> archivos;
 
-
-
-
-
-
     public EventsAdapterArchivosCentro(Context context, ArrayList<EventModelARchivosCentro> events) {
         this.context = context;
         archivos = events;
-
-
-
     }
-
 
     @NonNull
     @Override
@@ -57,10 +48,9 @@ public class EventsAdapterArchivosCentro extends RecyclerView.Adapter<EventsAdap
         String nombreArchivo = archivoActual.getName();
         String nombreCentro = archivoActual.getNameTarjeta();
 
-
         sosten.nombreUsuario.setText(nombreUsuario);
 
-        sosten.nombreApunte.setText(nombreCentro);
+        sosten.nombreApunte.setText(nombreArchivo);
 
         sosten.botonApunte.setOnClickListener(new View.OnClickListener() {
 
@@ -84,12 +74,10 @@ public class EventsAdapterArchivosCentro extends RecyclerView.Adapter<EventsAdap
 
                 // --- ABRIR EL EXPLORADOR DE ARCHIVOS ---
 
-
             }
 
         }
         );
-
     }
 
     @Override
@@ -107,9 +95,9 @@ public class EventsAdapterArchivosCentro extends RecyclerView.Adapter<EventsAdap
         public SostenDeVistas(@NonNull View itemView) {
 
             super(itemView);
-            nombreApunte = itemView.findViewById(R.id.tituloTarjetaApunte);
+            nombreApunte = itemView.findViewById(R.id.tituloARchivo);
             card = itemView.findViewById(R.id.cardview);
-            nombreUsuario  = itemView.findViewById(R.id.tituloApunte);
+            nombreUsuario  = itemView.findViewById(R.id.tituloUsuario);
             botonApunte = itemView.findViewById(R.id.botonDescargarApunte);
 
 

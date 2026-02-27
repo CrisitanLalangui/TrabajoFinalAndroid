@@ -41,9 +41,10 @@ public class EventModelARchivosCentro {
         this.name = name;
     }
 
-    public EventModelARchivosCentro(String nombreCentro, String nombreUsuario, String url, String nombreApunte) {
+    public EventModelARchivosCentro(String nombreCentro, String nombreUsuario, String nombreApunte, String url) {
+        this.name = nombreApunte;
+        this.email = nombreUsuario;;
         this.nameTarjeta = nombreCentro;
-
-
+        this.url = url;
     }
 }

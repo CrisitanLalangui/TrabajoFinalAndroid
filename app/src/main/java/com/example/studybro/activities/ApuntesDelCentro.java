@@ -101,18 +101,17 @@ public class ApuntesDelCentro extends Fragment {
                 ArchivosCentro archivosCentro = response.body();
 
                 for (ArchivosCentro.archivosDelCentro fileCenter : archivosCentro.archivosCentro) {
-                    email.add(fileCenter.email);
-                    nameTarjeta.add(fileCenter.nombreTarjeta);
-                    url.add(fileCenter.url);
-                    name.add(fileCenter.name);
+                    email.add(fileCenter.fileDetailCentro.email);
+                    nameTarjeta.add(fileCenter.fileDetailCentro.nombreTarjeta);
+                    url.add(fileCenter.fileDetailCentro.url);
+                    name.add(fileCenter.fileDetailCentro.name);
                 }
                 for (int i = 0; i < email.size(); i++) {
-                    archivosMisApuntes.add(new EventModelARchivosCentro(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));
-                    copiaArchivosMisApuntes.add(new EventModelARchivosCentro(name.get(i), url.get(i), email.get(i), nameTarjeta.get(i)));
+                    archivosMisApuntes.add(new EventModelARchivosCentro(nameTarjeta.get(i), email.get(i), name.get(i),url.get(i)));
+                        copiaArchivosMisApuntes.add(new EventModelARchivosCentro(name.get(i), email.get(i), nameTarjeta.get(i),url.get(i)));
 
                 }
                 adaptador.notifyDataSetChanged();
-
             }
 
             @Override
@@ -122,7 +121,6 @@ public class ApuntesDelCentro extends Fragment {
 
             }
         });
-
 
     }
 }

@@ -219,8 +219,7 @@ public class subirApuntes2 extends Fragment {
                     Toast.makeText(getContext(),
                             "Archivo subido correctamente",
                             Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(getContext(), MainActivity.class);
-                    startActivity(intent);
+
 
                 } else {
 

@@ -1,6 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.viewpager.widget.ViewPager
+<LinearLayout app:layout_constraintTop_toTopOf="parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mainPaginador"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+
+
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<LinearLayout
+
+    android:paddingTop="45dp"
+    android:background="@color/azulClaro"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+
+    <ImageButton
+        app:tint="@color/white"
+        android:id="@+id/botonSalirCentro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/azulClaro"
+        android:src="@drawable/flecha_salir" />
+
+    <TextView
+
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="textStart"
+        android:layout_marginRight="25dp"
+        android:text="Este es el texto del padre"
+        android:textSize="25sp"
+        android:padding="16dp"/>
+</LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mainPaginador"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+    </LinearLayout>
